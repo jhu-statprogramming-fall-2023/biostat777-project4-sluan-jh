@@ -10,26 +10,13 @@ output:
 runtime: shiny
 ---
 
-```{r load packages, include = FALSE}
+```{r global, include = FALSE}
 # check for missing packages and install
 using.packages <- c('ggplot2','here','tidyverse','tidytext','remotes','devtools','tidygeocoder','broom','ggthemes','kableExtra','flexdashboard','shiny','DT')
 
-mask.packages <- !using.packages %in% installed.packages()
-
-if (any(mask.packages)){
-  install.packages(using.packages[mask.packages])
-}
-
-if (!'cawd' %in% installed.packages()){
-  devtools::install_github("sfsheath/cawd")
-}
-  
-
 # read in required packages
 lapply(using.packages, require, character.only = TRUE)
-```
 
-```{r download data, include = FALSE}
 # tests if a directory named "data" exists locally
 if (!dir.exists(here("data"))) {
   dir.create(here("data"))

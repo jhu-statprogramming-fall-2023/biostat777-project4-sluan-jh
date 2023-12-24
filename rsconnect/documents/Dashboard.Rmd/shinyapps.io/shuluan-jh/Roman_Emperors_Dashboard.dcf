@@ -5,7 +5,7 @@ account: shuluan-jh
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10842982
-bundleId: 8080039
+bundleId: 8080075
 url: https://shuluan-jh.shinyapps.io/Roman_Emperors_Dashboard/
 version: 1
 asMultiple: FALSE
