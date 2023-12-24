@@ -1,0 +1,12 @@
+name: Dashboard
+title: Dashboard
+username: shuluan-jh
+account: shuluan-jh
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10843033
+bundleId: 8080106
+url: https://shuluan-jh.shinyapps.io/Dashboard/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

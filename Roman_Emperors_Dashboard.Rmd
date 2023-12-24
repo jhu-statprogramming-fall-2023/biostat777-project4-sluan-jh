@@ -12,10 +12,27 @@ runtime: shiny
 
 ```{r global, include = FALSE}
 # check for missing packages and install
-using.packages <- c('ggplot2','here','tidyverse','tidytext','remotes','devtools','tidygeocoder','broom','ggthemes','kableExtra','flexdashboard','shiny','DT')
+# using.packages <- c('ggplot2','here','tidyverse','tidytext','remotes','devtools','tidygeocoder','broom','ggthemes','kableExtra','flexdashboard','shiny','DT')
+# 
+# # read in required packages
+# lapply(using.packages, library, character.only = TRUE)
 
-# read in required packages
-lapply(using.packages, require, character.only = TRUE)
+library('ggplot2')
+library('here')
+library('tidyverse')
+library('tidytext')
+library('remotes')
+library('devtools')
+library('tidygeocoder')
+library('sp')
+library('maps')
+library('mapproj')
+library('broom')
+library('ggthemes')
+library('kableExtra')
+library('flexdashboard')
+library('shiny')
+library('DT')
 
 # tests if a directory named "data" exists locally
 if (!dir.exists(here("data"))) {
@@ -163,12 +180,12 @@ emperors.longlat %>%
 ### Map Visualization
 ```{r fig.height = 10, fig.width=10}
 #| warning: false
-world.maps <- map_data("world")
+world.maps <- ggplot2::map_data("world")
 
 roman.empire.maps.gg %>% ggplot(aes(x = long, y = lat)) +
   geom_polygon(data=world.maps,aes(x=long,y=lat,group=group),fill = 'grey',alpha = .5)+
   geom_polygon(aes(group = group), colour="black", fill = 'darkred', alpha = .5) +
-  coord_map(xlim = c(-10, 40),ylim = c(23, 55))+
+  ggplot2::coord_map(xlim = c(-10, 40),ylim = c(23, 55))+
   geom_text(aes(label = birth_cty), 
             data = unique(subset(emperors.longlat,n>5)),  
             size = 4, hjust = 0.6,vjust=2.5)+
