@@ -1,0 +1,12 @@
+name: Roman_Emperors_Dashboard
+title: Roman_Emperors_Dashboard
+username: shuluan-jh
+account: shuluan-jh
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10842982
+bundleId: 8080039
+url: https://shuluan-jh.shinyapps.io/Roman_Emperors_Dashboard/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
